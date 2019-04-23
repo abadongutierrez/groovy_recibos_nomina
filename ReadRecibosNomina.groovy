@@ -73,7 +73,6 @@ try {
     println "Error: ${ex.message}"
 }
 
-@groovy.transform.Sortable
 @groovy.transform.ToString
 class Comprobante {
     Persona emisor
@@ -81,7 +80,7 @@ class Comprobante {
     Nomina nomina
 }
 
-@groovy.transform.Sortable
+@groovy.transform.Sortable(includes = ['fechaInicialPago', 'fechaFinalPago'])
 @groovy.transform.ToString
 class Nomina {
     Date fechaInicialPago

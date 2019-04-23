@@ -1,4 +1,4 @@
-## Script para sacar un reporte de recibos de nomina
+## Script de groovy para sacar un reporte de recibos de nomina
 
 ### Usage:
 
