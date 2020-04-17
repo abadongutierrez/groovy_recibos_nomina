@@ -3,7 +3,7 @@ import java.text.SimpleDateFormat
 try {
     def baseDir = args[0]
     def extractedDir = args[0] + "/extracted"
-    def reportFileName = args[0] + "/report.txt"
+    def reportFileName = args[0] + "/reporte_totales.txt"
 
     def zipsDir = new File(baseDir)
     if (zipsDir.isDirectory()) {
@@ -11,6 +11,8 @@ try {
         zipsDir.listFiles().toList().forEach {
             if (it.name.endsWith(".zip")) {
                 ant.unzip(src: it.absolutePath, dest: extractedDir, overwrite: "true")
+            } else {
+                ant.copy(file: it.absolutePath, todir: extractedDir, overwrite: "true")
             }
         }
     } else {
